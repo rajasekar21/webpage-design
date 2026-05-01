@@ -1,7 +1,7 @@
 export const siteConfig = {
   repoName: 'jpedwin-memorial-page',
   githubOwner: 'rajasekar21',
-  title: 'edwinchelliah Memorial',
+  title: 'edwinchelliah',
   description:
     'A respectful digital memorial preserving biography, life timeline, family stories, photographs, memories, tributes, and legacy.',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://www.edwinchelliah.com'
