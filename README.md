@@ -1,11 +1,17 @@
 # J.P. Edwin Chelliah Memorial Webpage
 
-A calm, respectful, production-ready memorial website that begins as a lightweight GitHub Pages static site and can evolve into a Supabase-backed memories platform.
+A calm, respectful, production-ready memorial website hosted at **[www.edwinchelliah.com](https://www.edwinchelliah.com)**.
+
+Built with Next.js static export and deployed via GitHub Pages with a custom GoDaddy domain.
+
+## Live Site
+
+**https://www.edwinchelliah.com**
 
 ## What is included
 
 - Next.js, TypeScript, Tailwind CSS, Framer Motion, Lucide icons
-- Static export for GitHub Pages
+- Static export for GitHub Pages with custom domain
 - Responsive memorial sections: hero, biography, timeline, gallery, tributes, family message, events, footer
 - Dark mode, keyboard-friendly controls, semantic HTML, reduced-motion support
 - Gallery filtering and lightbox
@@ -45,12 +51,26 @@ npm run build
 
 ## Deploy
 
-See:
+Pushing to `main` automatically triggers GitHub Actions which builds and deploys the site to GitHub Pages at [www.edwinchelliah.com](https://www.edwinchelliah.com).
+
+See also:
 
 - `docs/DEPLOYMENT.md`
 - `docs/GODADDY_DOMAIN.md`
 - `docs/SUPABASE.md`
 - `docs/ROADMAP.md`
+
+## GoDaddy DNS Configuration
+
+Add these records in your GoDaddy DNS settings:
+
+| Type  | Name | Value                   | TTL  |
+|-------|------|-------------------------|------|
+| CNAME | www  | rajasekar21.github.io   | 1hr  |
+| A     | @    | 185.199.108.153         | 1hr  |
+| A     | @    | 185.199.109.153         | 1hr  |
+| A     | @    | 185.199.110.153         | 1hr  |
+| A     | @    | 185.199.111.153         | 1hr  |
 
 ## Maintenance for family members
 
