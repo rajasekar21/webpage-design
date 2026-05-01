@@ -23,7 +23,7 @@ export const metadata: Metadata = {
         url: '/images/og-image.svg',
         width: 1200,
         height: 630,
-        alt: 'Memorial website preview'
+        alt: 'J.P. Edwin Chelliah — digital memorial and family archive'
       }
     ],
     locale: 'en_US',

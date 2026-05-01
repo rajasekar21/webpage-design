@@ -7,10 +7,17 @@ import { FadeIn } from '@/components/motion-wrapper';
 import { Section } from '@/components/section';
 import { SiteHeader } from '@/components/theme-provider';
 import { withBasePath } from '@/lib/site';
+import { personSchema, webSiteSchema, eventsSchema, memorialPageSchema } from '@/lib/structured-data';
 
 export default function Home() {
+  const jsonLd = [personSchema(), webSiteSchema(), memorialPageSchema(), ...eventsSchema()];
+
   return (
     <main id="main-content" className="overflow-hidden bg-paper text-ink dark:bg-twilight dark:text-paper">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <SiteHeader />
 
       <section id="home" className="relative flex min-h-dvh items-center px-5 pb-14 pt-28 sm:px-8 lg:px-12">

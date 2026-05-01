@@ -85,25 +85,25 @@ export const achievements = [
 export const galleryPhotos: GalleryPhoto[] = [
   {
     src: '/images/gallery-family.svg',
-    alt: 'Warm family gathering illustration',
+    alt: 'J.P. Edwin Chelliah with family — warm gatherings and shared moments at home',
     album: 'Family',
     caption: 'Family gatherings and the comfort of being together'
   },
   {
     src: '/images/gallery-career.svg',
-    alt: 'Archive desk and career memories illustration',
+    alt: 'J.P. Edwin Chelliah at work — a career built on commitment and trusted responsibility',
     album: 'Career',
     caption: 'Years of dedicated work and trusted responsibility'
   },
   {
     src: '/images/gallery-celebration.svg',
-    alt: 'Celebration lights and flowers illustration',
+    alt: 'J.P. Edwin Chelliah celebrating milestones — festivals, birthdays, and shared joy with loved ones',
     album: 'Celebrations',
     caption: 'Milestones, festivals, and shared joy'
   },
   {
     src: '/images/gallery-legacy.svg',
-    alt: 'Legacy archive illustration',
+    alt: 'Objects, letters and mementos preserving the legacy and memory of J.P. Edwin Chelliah',
     album: 'Legacy',
     caption: 'Objects, letters, places, and memories preserved'
   }
