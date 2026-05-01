@@ -1,10 +1,10 @@
 export const siteConfig = {
-  repoName: 'webpage-design',
+  repoName: 'jpedwin-memorial-page',
   githubOwner: 'rajasekar21',
-  title: 'Memorial Website Platform',
+  title: 'edwinchelliah Memorial',
   description:
     'A respectful digital memorial preserving biography, life timeline, family stories, photographs, memories, tributes, and legacy.',
-  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://rajasekar21.github.io/webpage-design'
+  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://www.edwinchelliah.com'
 };
 
 export function withBasePath(path: string) {
