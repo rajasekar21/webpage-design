@@ -1,4 +1,4 @@
-const repoName = 'webpage-design';
+const repoName = 'jpedwin-memorial-page';
 const isGithubPages = process.env.GITHUB_PAGES === 'true';
 
 /** @type {import('next').NextConfig} */
@@ -12,7 +12,7 @@ const nextConfig = {
   basePath: isGithubPages ? `/${repoName}` : '',
   assetPrefix: isGithubPages ? `/${repoName}/` : '',
   env: {
-    NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL || 'https://rajasekar21.github.io/webpage-design',
+    NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL || 'https://rajasekar21.github.io/jpedwin-memorial-page',
     NEXT_PUBLIC_BASE_PATH: isGithubPages ? `/${repoName}` : ''
   }
 };
