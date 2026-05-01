@@ -1,4 +1,4 @@
-# Memorial Website Platform
+# J.P. Edwin Chelliah Memorial Webpage
 
 A calm, respectful, production-ready memorial website that begins as a lightweight GitHub Pages static site and can evolve into a Supabase-backed memories platform.
 
