@@ -1,0 +1,27 @@
+{
+  "name": "J.P. Edwin Chelliah — Memorial",
+  "short_name": "edwinchelliah",
+  "description": "A respectful digital memorial preserving biography, life timeline, family stories, photographs, memories, tributes, and legacy.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#f7f3ed",
+  "theme_color": "#b4935a",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["memorial", "family"]
+}

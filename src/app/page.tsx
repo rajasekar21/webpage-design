@@ -13,7 +13,7 @@ export default function Home() {
     <main className="overflow-hidden bg-paper text-ink dark:bg-twilight dark:text-paper">
       <SiteHeader />
 
-      <section id="home" className="relative flex min-h-screen items-center px-5 pb-14 pt-28 sm:px-8 lg:px-12">
+      <section id="home" className="relative flex min-h-dvh items-center px-5 pb-14 pt-28 sm:px-8 lg:px-12">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_25%_20%,rgba(180,147,90,0.22),transparent_32%),linear-gradient(135deg,#f7f3ed_0%,#ebe3d7_55%,#e6ece8_100%)] dark:bg-[radial-gradient(circle_at_25%_20%,rgba(180,147,90,0.18),transparent_32%),linear-gradient(135deg,#161a22_0%,#1f252a_55%,#26352f_100%)]" />
         <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
           <FadeIn>

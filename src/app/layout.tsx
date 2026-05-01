@@ -69,6 +69,11 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
         <meta httpEquiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
         <meta name="format-detection" content="telephone=no" />
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="apple-touch-icon" href="/images/icon-192.png" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="edwinchelliah" />
       </head>
       <body className="font-sans antialiased">{children}</body>
     </html>
