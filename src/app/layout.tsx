@@ -10,8 +10,14 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.title}`
   },
   description: siteConfig.description,
+  keywords: ['J.P. Edwin Chelliah', 'Edwin Chelliah', 'memorial', 'family archive', 'tribute', 'legacy', 'Chelliah family'],
+  authors: [{ name: 'Edwin Chelliah Family' }],
   alternates: {
     canonical: '/'
+  },
+  icons: {
+    icon: '/favicon.svg',
+    apple: '/images/icon-192.png'
   },
   openGraph: {
     title: siteConfig.title,
@@ -28,6 +34,17 @@ export const metadata: Metadata = {
     ],
     locale: 'en_US',
     type: 'website'
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: siteConfig.title,
+    description: siteConfig.description,
+    images: [
+      {
+        url: '/images/og-image.svg',
+        alt: 'J.P. Edwin Chelliah — digital memorial and family archive'
+      }
+    ]
   },
   robots: {
     index: true,

@@ -8,48 +8,14 @@ const LAST_MODIFIED = new Date('2026-05-01');
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = siteConfig.url;
 
+  // Single-page site: only the canonical root URL belongs in the sitemap.
+  // Hash fragments (#about, #timeline…) are not crawlable as separate pages.
   return [
     {
       url: `${base}/`,
       lastModified: LAST_MODIFIED,
       changeFrequency: 'monthly',
       priority: 1.0
-    },
-    {
-      url: `${base}/#about`,
-      lastModified: LAST_MODIFIED,
-      changeFrequency: 'monthly',
-      priority: 0.9
-    },
-    {
-      url: `${base}/#timeline`,
-      lastModified: LAST_MODIFIED,
-      changeFrequency: 'monthly',
-      priority: 0.8
-    },
-    {
-      url: `${base}/#gallery`,
-      lastModified: LAST_MODIFIED,
-      changeFrequency: 'monthly',
-      priority: 0.8
-    },
-    {
-      url: `${base}/#tributes`,
-      lastModified: LAST_MODIFIED,
-      changeFrequency: 'monthly',
-      priority: 0.7
-    },
-    {
-      url: `${base}/#family`,
-      lastModified: LAST_MODIFIED,
-      changeFrequency: 'monthly',
-      priority: 0.7
-    },
-    {
-      url: `${base}/#events`,
-      lastModified: LAST_MODIFIED,
-      changeFrequency: 'monthly',
-      priority: 0.6
     }
   ];
 }

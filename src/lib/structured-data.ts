@@ -13,7 +13,7 @@ export function personSchema() {
     birthDate: '1955',
     deathDate: '2025',
     url: BASE_URL,
-    image: `${BASE_URL}/images/portrait.jpg`,
+    image: `${BASE_URL}/images/portrait.svg`,
     familyName: 'Chelliah',
     givenName: 'J.P. Edwin',
     knowsAbout: memorialProfile.values
@@ -72,8 +72,11 @@ export function memorialPageSchema() {
     description: siteConfig.description,
     url: BASE_URL,
     inLanguage: 'en',
+    datePublished: '2025-04-01',
+    dateModified: '2026-05-01',
     isPartOf: { '@type': 'WebSite', url: BASE_URL },
     about: { '@type': 'Person', name: memorialProfile.fullName },
+    author: { '@type': 'Organization', name: 'Edwin Chelliah Family', url: BASE_URL },
     breadcrumb: {
       '@type': 'BreadcrumbList',
       itemListElement: [
