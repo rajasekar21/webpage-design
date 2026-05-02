@@ -14,14 +14,17 @@ const WINDOW_MS = 60 * 60 * 1000; // 1 hour
 function checkRateLimit(): boolean {
   try {
     const raw = localStorage.getItem(RATE_LIMIT_KEY);
-    const timestamps: number[] = raw ? JSON.parse(raw) : [];
+    const parsed: unknown = raw ? JSON.parse(raw) : [];
+    const timestamps: number[] = Array.isArray(parsed)
+      ? parsed.filter((t): t is number => typeof t === 'number')
+      : [];
     const now = Date.now();
     const recent = timestamps.filter((t) => now - t < WINDOW_MS);
     if (recent.length >= MAX_SUBMISSIONS) return false;
     localStorage.setItem(RATE_LIMIT_KEY, JSON.stringify([...recent, now]));
     return true;
   } catch {
-    return true;
+    return false;
   }
 }
 

@@ -18,6 +18,7 @@ export function AdminPanel() {
   const [user, setUser] = useState<User | null>(null);
   const [posts, setPosts] = useState<MemoryPost[]>([]);
   const [notice, setNotice] = useState('');
+  const [updatingId, setUpdatingId] = useState<string | null>(null);
 
   useEffect(() => {
     if (!supabase) return;
@@ -42,14 +43,16 @@ export function AdminPanel() {
     const email = String(form.get('email'));
     const password = String(form.get('password'));
     const { error } = await supabase.auth.signInWithPassword({ email, password });
-    setNotice(error ? error.message : 'Signed in.');
+    setNotice(error ? 'Sign-in failed. Please check your credentials.' : 'Signed in.');
   }
 
   async function updatePost(id: string, status: MemoryPost['status']) {
-    if (!supabase) return;
+    if (!supabase || updatingId) return;
+    setUpdatingId(id);
     const { error } = await supabase.from('memory_posts').update({ status }).eq('id', id);
+    setUpdatingId(null);
     if (error) {
-      setNotice(error.message);
+      setNotice('Could not update this post. Please try again.');
       return;
     }
     setPosts((current) => current.map((post) => (post.id === id ? { ...post, status } : post)));
@@ -70,9 +73,9 @@ export function AdminPanel() {
     return (
       <form onSubmit={login} className="mx-auto grid max-w-md gap-4 rounded-lg border border-ink/10 bg-white/70 p-6 shadow-soft dark:border-white/10 dark:bg-white/5">
         <h1 className="font-serif text-3xl">Family admin</h1>
-        <input name="email" type="email" required placeholder="Email" className="rounded-md border border-ink/10 bg-white px-4 py-3 dark:border-white/10 dark:bg-twilight" />
-        <input name="password" type="password" required placeholder="Password" className="rounded-md border border-ink/10 bg-white px-4 py-3 dark:border-white/10 dark:bg-twilight" />
-        <button className="inline-flex items-center justify-center gap-2 rounded-full bg-ink px-5 py-3 text-paper dark:bg-paper dark:text-ink">
+        <input name="email" type="email" required placeholder="Email" autoComplete="email" className="rounded-md border border-ink/10 bg-white px-4 py-3 dark:border-white/10 dark:bg-twilight" />
+        <input name="password" type="password" required placeholder="Password" autoComplete="current-password" className="rounded-md border border-ink/10 bg-white px-4 py-3 dark:border-white/10 dark:bg-twilight" />
+        <button type="submit" className="inline-flex items-center justify-center gap-2 rounded-full bg-ink px-5 py-3 text-paper dark:bg-paper dark:text-ink">
           <LogIn aria-hidden className="h-4 w-4" />
           Sign in
         </button>
@@ -105,11 +108,21 @@ export function AdminPanel() {
             </div>
             <p className="mt-4 leading-7 text-ink/75 dark:text-paper/75">{post.message}</p>
             <div className="mt-5 flex gap-2">
-              <button onClick={() => updatePost(post.id, 'approved')} className="inline-flex items-center gap-2 rounded-full bg-cedar px-4 py-2 text-sm text-white">
+              <button
+                type="button"
+                onClick={() => updatePost(post.id, 'approved')}
+                disabled={updatingId !== null}
+                className="inline-flex items-center gap-2 rounded-full bg-cedar px-4 py-2 text-sm text-white disabled:opacity-50"
+              >
                 <Check aria-hidden className="h-4 w-4" />
-                Approve
+                {updatingId === post.id ? 'Saving…' : 'Approve'}
               </button>
-              <button onClick={() => updatePost(post.id, 'removed')} className="inline-flex items-center gap-2 rounded-full border border-ink/10 px-4 py-2 text-sm dark:border-white/10">
+              <button
+                type="button"
+                onClick={() => updatePost(post.id, 'removed')}
+                disabled={updatingId !== null}
+                className="inline-flex items-center gap-2 rounded-full border border-ink/10 px-4 py-2 text-sm disabled:opacity-50 dark:border-white/10"
+              >
                 <Trash2 aria-hidden className="h-4 w-4" />
                 Remove
               </button>
